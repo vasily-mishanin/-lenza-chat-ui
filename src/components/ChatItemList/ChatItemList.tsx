@@ -3,14 +3,20 @@ import type { IChatItem } from '../../interface/page';
 import ChatItem from '../ChatItem/ChatItem';
 import { useState } from 'react';
 
+type ChatIemListProps = {
+  chatItems: IChatItem[];
+  onChatSelect: (chatId: string) => void;
+};
+
 export default function ChatItemList({
   chatItems,
-}: {
-  chatItems: IChatItem[];
-}) {
+  onChatSelect,
+}: ChatIemListProps) {
   const [selectedIndex, setSelectedIndex] = useState('');
+
   const handleItemClick = (itemIndex: string) => {
     setSelectedIndex(itemIndex);
+    onChatSelect(itemIndex);
   };
 
   return (

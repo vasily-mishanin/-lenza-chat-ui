@@ -26,9 +26,13 @@ export const PageIndex: FC = () => {
     getChatItems();
   }, []);
 
+  const hadleSelectChat = (chatId: string) => {
+    console.log('hadleSelectChat ', chatId);
+  };
+
   return (
     <>
-      <ChatItemList chatItems={chatList} />
+      <ChatItemList chatItems={chatList} onChatSelect={hadleSelectChat} />
       <Messages title={title} />
     </>
   );

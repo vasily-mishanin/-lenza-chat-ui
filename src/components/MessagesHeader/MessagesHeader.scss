@@ -1,0 +1,16 @@
+.message-header {
+  height: 64px;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: var(--main-font-lato);
+  padding-left: 18px;
+  border-bottom: 1px solid lightgray;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  color: #201f1e;
+}
