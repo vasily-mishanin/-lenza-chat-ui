@@ -7,7 +7,7 @@ import './ChatItem.scss';
 
 type ChatItemProps = {
   chatItem: IChatItem;
-  onItemClick: (id: string) => void;
+  onItemClick: (id: string, title: string) => void;
   selectedIndex: string;
 };
 
@@ -18,7 +18,7 @@ export default function ChatItem({
 }: ChatItemProps) {
   const { avatar, title, lastMessage, lastMessageTime, id: itemId } = chatItem;
   const handleSelect = () => {
-    onItemClick(itemId);
+    onItemClick(itemId, title);
   };
 
   const ItemClass =

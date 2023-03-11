@@ -1,16 +1,25 @@
 import React, { FC, useEffect, useState } from 'react';
-import { getChatList } from '../../api/chat';
+import { getChatList, getMessagesList } from '../../api/chat';
 import ChatItemList from '../../components/ChatItemList/ChatItemList';
-import Messages from '../../components/Messages/Messages';
-import { APIChatResponse, IChatItem, IPage } from '../../interface/page';
+import MessagesSection from '../../components/MessagesSection/MessagesSection';
+import {
+  APIChatsResponse,
+  APIMessagesResponse,
+  IChatItem,
+  IChatMessage,
+  IPage,
+} from '../../interface/page';
 
 export const PageIndex: FC = () => {
   const [chatList, setChatList] = useState<IChatItem[]>([]);
   const [title, setTitle] = useState('Chat Header');
+  const [selectedChatMessages, setSelectedChatMessages] = useState<
+    IChatMessage[]
+  >([]);
 
   useEffect(() => {
     const getChatItems = async () => {
-      const data = (await getChatList()) as APIChatResponse;
+      const data = (await getChatList()) as APIChatsResponse;
       console.log('getChatList ', data.response);
       const chatItems: IChatItem[] = data.response.map((respItem) => ({
         id: respItem.id,
@@ -26,14 +35,19 @@ export const PageIndex: FC = () => {
     getChatItems();
   }, []);
 
-  const hadleSelectChat = (chatId: string) => {
+  const hadleSelectChat = async (chatId: string, chatTitle: string) => {
     console.log('hadleSelectChat ', chatId);
+    const messages = (await getMessagesList(chatId)) as APIMessagesResponse;
+    console.log(messages.response);
+
+    setTitle(chatTitle);
+    setSelectedChatMessages(messages.response);
   };
 
   return (
     <>
       <ChatItemList chatItems={chatList} onChatSelect={hadleSelectChat} />
-      <Messages title={title} />
+      <MessagesSection chatTitle={title} messages={selectedChatMessages} />
     </>
   );
 };

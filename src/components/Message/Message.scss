@@ -1,0 +1,45 @@
+.message {
+  display: flex;
+  width: 52%;
+
+  &__content {
+    margin-left: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    &__name {
+      font-family: var(--main-font-lato);
+      font-style: normal;
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 20px;
+      color: #201f1e;
+    }
+
+    &__message {
+      padding: 8px 12px;
+      background: #f3f3f3;
+      font-family: var(--main-font-lato);
+      font-family: 'Lato';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 20px;
+      border-radius: 4px;
+      color: #201f1e;
+    }
+  }
+
+  .time-wrapper {
+    text-align: right;
+  }
+}
+
+.align-right {
+  justify-self: right;
+}
+
+.my-message {
+  background: rgba(64, 126, 201, 0.16);
+}

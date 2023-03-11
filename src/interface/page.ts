@@ -2,14 +2,6 @@ export interface IPage {
   title?: string;
 }
 
-export interface IChatItem {
-  id: string;
-  avatar: string;
-  title: string;
-  lastMessage: string;
-  lastMessageTime: number;
-}
-
 export interface IChatItemResponse {
   id: string;
   avatar: string;
@@ -22,7 +14,15 @@ export interface IChatItemResponse {
   };
 }
 
-export interface IChatMessageResponse {
+export interface IChatItem {
+  id: string;
+  avatar: string;
+  title: string;
+  lastMessage: string;
+  lastMessageTime: number;
+}
+
+export interface IChatMessage {
   id: string;
   created_at: number;
   user: {
@@ -36,6 +36,10 @@ export interface IChatMessageResponse {
   is_new: true;
 }
 
-export interface APIChatResponse {
+export interface APIChatsResponse {
   response: IChatItemResponse[];
+}
+
+export interface APIMessagesResponse {
+  response: IChatMessage[];
 }

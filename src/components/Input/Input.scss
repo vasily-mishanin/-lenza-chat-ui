@@ -1,0 +1,45 @@
+.text-section {
+  height: 108px;
+  border: 1px solid black;
+}
+
+.custom-text-field {
+  width: 100%;
+  position: relative;
+}
+
+.custom-text-field__placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  font-size: 14px;
+  color: #b3b3b3;
+  padding: 12px;
+  transition: all 0.15s ease-out;
+}
+
+.custom-text-field__placeholder--hidden {
+  transform: translateY(-20px);
+  opacity: 0;
+}
+
+.custom-text-field__input {
+  width: 100%;
+  min-height: 54px;
+  padding: 12px;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+  border: 1px solid #b3b3b3;
+  border-radius: 8px;
+  box-sizing: border-box;
+  outline: none;
+  white-space: pre-wrap;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.custom-text-field__input--scroll {
+  overflow-y: scroll;
+}

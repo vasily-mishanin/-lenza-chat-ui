@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 type ChatIemListProps = {
   chatItems: IChatItem[];
-  onChatSelect: (chatId: string) => void;
+  onChatSelect: (chatId: string, title: string) => void;
 };
 
 export default function ChatItemList({
@@ -14,9 +14,9 @@ export default function ChatItemList({
 }: ChatIemListProps) {
   const [selectedIndex, setSelectedIndex] = useState('');
 
-  const handleItemClick = (itemIndex: string) => {
+  const handleItemClick = (itemIndex: string, title: string) => {
     setSelectedIndex(itemIndex);
-    onChatSelect(itemIndex);
+    onChatSelect(itemIndex, title);
   };
 
   return (
