@@ -28,9 +28,20 @@ export default function MessagesList({ messages }: MessagesListProps) {
 }
 
 function List({ messages }: MessagesListProps) {
+  let lastId = '';
+  const preparedMessages = messages.map((message) => {
+    if (message.user.id === lastId) {
+      message.subsequent = true;
+    }
+    lastId = message.user.id;
+    return message;
+  });
+
+  console.log(preparedMessages);
+
   return (
     <ul className='messages-list'>
-      {messages.map((message) => (
+      {preparedMessages.map((message) => (
         <li className='messages-list__item' key={message.id}>
           <Message chatMessage={message} />
         </li>

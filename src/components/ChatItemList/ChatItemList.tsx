@@ -20,9 +20,9 @@ export default function ChatItemList({
   };
 
   return (
-    <section className='chat-list'>
+    <section className='chat-list-section'>
       <h2 className='chat-list__header'>All chats</h2>
-      <ul>
+      <ul className='chat-list'>
         {chatItems.map((item) => (
           <li key={item.id}>
             <ChatItem

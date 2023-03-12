@@ -34,6 +34,7 @@ export interface IChatMessage {
   };
   message: string;
   is_new: true;
+  subsequent?: boolean;
 }
 
 export interface APIChatsResponse {
