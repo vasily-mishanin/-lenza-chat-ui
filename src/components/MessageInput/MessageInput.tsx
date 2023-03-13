@@ -30,24 +30,7 @@ const CustomTextField: React.FC<Props> = ({ placeholder }) => {
 
   return (
     <div className='text-section'>
-      {/* <div className='custom-text-field'>
-        <div
-          className={`custom-text-field__placeholder ${
-            value ? 'custom-text-field__placeholder--hidden' : ''
-          }`}
-        >
-          {placeholder}
-        </div>
-        <div
-          className={`custom-text-field__input  ${
-            lines >= 2 ? 'custom-text-field__input--scroll' : ''
-          }`}
-          contentEditable
-          onInput={handleChange}
-          onKeyDown={handleKeyDown}
-        ></div>
-      </div> */}
-      <Input placeholder='Type messsage' />
+      <Input placeholder='Type message' />
       <div className='text-section__icons'>
         <img src={AttachIcon} alt='attach' />
         <img src={SendIcon} alt='send' />

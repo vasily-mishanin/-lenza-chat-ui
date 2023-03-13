@@ -1,5 +1,21 @@
+.input-wrapper {
+  position: relative;
+}
+
 .input {
+  padding: 10px 16px;
   border: 1px solid #a19f9d;
+  color: #a19f9d;
   border-radius: 4px;
-  margin-bottom: 1rem;
+  margin-bottom: 4px;
+  font-family: var(--main-font-lato);
+  outline: none;
+}
+
+.placeholder {
+  position: absolute;
+  top: 10px;
+  left: 16px;
+  color: #a19f9d;
+  outline: none;
 }
