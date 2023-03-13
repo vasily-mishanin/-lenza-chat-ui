@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/-lenza-chat-ui/static/css/main.fbd9a8a1.css",
+    "main.js": "/-lenza-chat-ui/static/js/main.c4710cf2.js",
+    "static/media/icon-message.svg": "/-lenza-chat-ui/static/media/icon-message.c1d80161bbe0567d9eb0676287fba40b.svg",
+    "static/media/icon-attach.svg": "/-lenza-chat-ui/static/media/icon-attach.a750010641b0aff69a75e7f80ff9caef.svg",
+    "static/media/read-message.svg": "/-lenza-chat-ui/static/media/read-message.5c59c7f6b82bbf4bc4d865d53656986a.svg",
+    "index.html": "/-lenza-chat-ui/index.html",
+    "static/media/icon-send.svg": "/-lenza-chat-ui/static/media/icon-send.71deb4071d9be782853ad3e4d000cdf6.svg",
+    "main.fbd9a8a1.css.map": "/-lenza-chat-ui/static/css/main.fbd9a8a1.css.map",
+    "main.c4710cf2.js.map": "/-lenza-chat-ui/static/js/main.c4710cf2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fbd9a8a1.css",
+    "static/js/main.c4710cf2.js"
+  ]
+}
