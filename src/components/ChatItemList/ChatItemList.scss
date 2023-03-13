@@ -1,0 +1,31 @@
+.chat-list-section {
+  width: 360px;
+  height: 100%;
+
+  border-right: 1px solid lightgray;
+
+  display: flex;
+  flex-direction: column;
+
+  flex-shrink: 0;
+}
+
+.chat-list {
+  overflow-y: scroll;
+  height: calc(100% - 64px);
+
+  &__header {
+    flex-shrink: 0;
+
+    height: 64px;
+    width: 100%;
+    padding: 20px 16px;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    align-items: center;
+    color: #201f1e;
+  }
+}
