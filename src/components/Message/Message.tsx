@@ -29,9 +29,11 @@ export default function Message({ chatMessage }: MessageProps) {
           </p>
         )}
         <div className={messageContantClass}>
-          <p>{message} </p>
-          <p className='time-wrapper'>
-            <Time timestamp={created_at} read={you} />
+          <p>
+            {message}
+            <span className='time-wrapper'>
+              <Time timestamp={created_at} read={you} />
+            </span>
           </p>
         </div>
       </div>
