@@ -1,5 +1,5 @@
 import { IChatMessage } from '../../interface/page';
-import Input from '../Input/Input';
+import MessageInput from '../MessageInput/MessageInput';
 import MessagesHeader from '../MessagesHeader/MessagesHeader';
 import MessagesList from '../MessagesList/MessagesList';
 import './MessagesSection.scss';
@@ -17,7 +17,7 @@ export default function MessagesSection({
     <section className='messages-section'>
       <MessagesHeader title={chatTitle} />
       <MessagesList messages={messages} />
-      <Input placeholder=' Type messsage' />
+      <MessageInput placeholder=' Type messsage' />
     </section>
   );
 }

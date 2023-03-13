@@ -12,7 +12,7 @@ import {
 
 export const PageIndex: FC = () => {
   const [chatList, setChatList] = useState<IChatItem[]>([]);
-  const [title, setTitle] = useState('Chat Header');
+  const [currentChatTitle, setCurrentChatTitle] = useState('');
   const [selectedChatMessages, setSelectedChatMessages] = useState<
     IChatMessage[]
   >([]);
@@ -40,14 +40,17 @@ export const PageIndex: FC = () => {
     const messages = (await getMessagesList(chatId)) as APIMessagesResponse;
     console.log(messages.response);
 
-    setTitle(chatTitle);
+    setCurrentChatTitle(chatTitle);
     setSelectedChatMessages(messages.response);
   };
 
   return (
     <>
       <ChatItemList chatItems={chatList} onChatSelect={hadleSelectChat} />
-      <MessagesSection chatTitle={title} messages={selectedChatMessages} />
+      <MessagesSection
+        chatTitle={currentChatTitle}
+        messages={selectedChatMessages}
+      />
     </>
   );
 };
