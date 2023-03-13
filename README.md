@@ -1,7 +1,9 @@
 # Тестовое задание на должность Front-end (React) разработчик
 
-Finished task deployed here: https://vasily-mishanin.github.io/-lenza-chat-ui 
+Finished task deployed here: https://vasily-mishanin.github.io/-lenza-chat-ui
+
 API docs: https://api.lenzaos.com/documentation/ 
+
 Figma: https://www.figma.com/file/y7k2xRKaIo9y5XzttQpWes/TEST18?node-id=202%3A2180&t=GlzJivaiEAdjL4ms-0 
 
 Время рассчитанное на выполнение задания - 3-6 часов. Однако Вы можете уделить столько времени, сколько потребуется. Если Ваш расчет затрат времени составит более 12 часво, сообщите Нам где конкретно будет затрачено много времени и МЫ упростим задание.
