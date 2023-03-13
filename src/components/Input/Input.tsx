@@ -1,52 +1,44 @@
+import React, { useRef, useState } from 'react';
 import './Input.scss';
-import { useState } from 'react';
-import AttachIcon from '../../assets/icon-attach.svg';
-import SendIcon from '../../assets/icon-send.svg';
 
 interface Props {
-  placeholder: string;
+  placeholder?: string;
+  value?: string;
+  onChange?: (value: string) => void;
 }
 
-const CustomTextField: React.FC<Props> = ({ placeholder }) => {
-  const [value, setValue] = useState<string>('');
-  const [lines, setLines] = useState<number>(1);
+const Input: React.FC<Props> = ({ placeholder, onChange }) => {
+  const [numLines, setNumLines] = useState(3);
+  const inputRef = useRef<HTMLDivElement>(null);
 
-  const handleChange = (event: React.FormEvent<HTMLDivElement>) => {
-    setValue(event.currentTarget.textContent || '');
-    setLines(event.currentTarget.childNodes.length);
-  };
-
-  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
-    if (event.key === 'Enter') {
-      event.preventDefault();
-    }
+  const handleInput = (event: React.FormEvent<HTMLDivElement>) => {
+    const input = event.currentTarget.innerText;
+    const height = inputRef.current?.clientHeight || 0;
+    const lineHeight = parseFloat(
+      getComputedStyle(event.currentTarget).lineHeight
+    );
+    const lines = Math.max(Math.floor(height / lineHeight), 3);
+    setNumLines(lines);
+    onChange?.(input.trim());
   };
 
   return (
-    <div className='text-section'>
-      <div className='custom-text-field'>
-        <div
-          className={`custom-text-field__placeholder ${
-            value ? 'custom-text-field__placeholder--hidden' : ''
-          }`}
-        >
-          {placeholder}
-        </div>
-        <div
-          className={`custom-text-field__input ${
-            lines >= 3 ? 'custom-text-field__input--scroll' : ''
-          }`}
-          contentEditable={true}
-          onInput={handleChange}
-          onKeyDown={handleKeyDown}
-        ></div>
-      </div>
-      <div className='text-section__icons'>
-        <img src={AttachIcon} alt='attach' />
-        <img src={SendIcon} alt='send' />
-      </div>
-    </div>
+    <div
+      ref={inputRef}
+      contentEditable
+      className='input'
+      style={{
+        fontSize: '15px',
+        lineHeight: '1.5',
+        wordBreak: 'break-word',
+        maxHeight: `${numLines * 1.5}em`,
+        minHeight: '4.5em',
+        overflowY: numLines > 2 ? 'scroll' : 'hidden',
+      }}
+      placeholder={placeholder}
+      onInput={handleInput}
+    />
   );
 };
 
-export default CustomTextField;
+export default Input;
